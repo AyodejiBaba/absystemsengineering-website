@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABS Systems Engineering | Advanced Engineering Consultancy</title>
+  <meta name="description" content="ABS Systems Engineering helps technology companies design, validate and scale dependable embedded, hardware, semiconductor and connected products.">
+  <meta name="theme-color" content="#081426">
+  <meta property="og:title" content="ABS Systems Engineering">
+  <meta property="og:description" content="Engineering clarity for complex products—from architecture and prototyping to validation and production readiness.">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --ink: #0a172a;
+      --muted: #56657a;
+      --line: #dbe4ef;
+      --paper: #f7f9fc;
+      --white: #ffffff;
+      --brand: #1768e5;
+      --brand-dark: #0b4fb9;
+      --navy: #071426;
+      --glow: rgba(23, 104, 229, .16);
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(7, 20, 38, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(219,228,239,.78);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--brand), #55a1ff);
+      box-shadow: 0 12px 30px var(--glow);
+      font-size: 13px;
+      letter-spacing: -.03em;
+    }
+    .navlinks { display: flex; align-items: center; gap: 28px; color: #334155; font-size: 14px; font-weight: 650; }
+    .navlinks a:hover { color: var(--brand); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 760;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { color: white; background: var(--brand); box-shadow: 0 14px 32px var(--glow); }
+    .button.primary:hover { background: var(--brand-dark); }
+    .button.secondary { border: 1px solid var(--line); background: rgba(255,255,255,.7); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 104px 0 78px;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(44,130,246,.15), transparent 30%),
+        radial-gradient(circle at 15% 30%, rgba(96,165,250,.10), transparent 25%),
+        linear-gradient(180deg, #fbfdff 0%, #fff 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.16fr .84fr; gap: 64px; align-items: center; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid #cfe0f8;
+      border-radius: 999px;
+      color: #16529e;
+      background: rgba(240,247,255,.8);
+      font-size: 13px;
+      font-weight: 750;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 6px rgba(23,104,229,.10); }
+    h1 {
+      max-width: 820px;
+      margin: 22px 0 22px;
+      font-size: clamp(46px, 7vw, 78px);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+    h1 span { color: var(--brand); }
+    .lead { max-width: 700px; margin: 0; color: var(--muted); font-size: clamp(18px, 2vw, 22px); }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+    .hero-note { margin-top: 22px; color: #718096; font-size: 14px; }
+
+    .systems-card {
+      position: relative;
+      min-height: 480px;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 32px;
+      padding: 30px;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(145deg, rgba(23,104,229,.22), transparent 50%),
+        var(--navy);
+      box-shadow: var(--shadow);
+    }
+    .systems-card::before, .systems-card::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+    }
+    .systems-card::before { width: 340px; height: 340px; right: -130px; top: -100px; }
+    .systems-card::after { width: 220px; height: 220px; left: -110px; bottom: -90px; }
+    .systems-card h2 { margin: 0 0 8px; font-size: 25px; letter-spacing: -.035em; }
+    .systems-card p { margin: 0; color: #a9b9cc; }
+    .system-list { position: relative; z-index: 1; display: grid; gap: 12px; margin-top: 34px; }
+    .system-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,.055);
+    }
+    .system-item strong { font-size: 15px; }
+    .system-item span { color: #8fbaff; font-size: 12px; font-weight: 750; text-transform: uppercase; letter-spacing: .1em; }
+
+    section { padding: 96px 0; }
+    .section-label { color: var(--brand); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+    .section-title { max-width: 760px; margin: 12px 0 18px; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; letter-spacing: -.045em; }
+    .section-intro { max-width: 720px; margin: 0; color: var(--muted); font-size: 18px; }
+
+    .services { background: var(--paper); }
+    .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 46px; }
+    .service-card {
+      position: relative;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 10px 35px rgba(7,20,38,.045);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .service-card:hover { transform: translateY(-5px); border-color: #bdd4f2; box-shadow: var(--shadow); }
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--brand);
+      background: #edf5ff;
+      font-weight: 900;
+    }
+    .service-card h3 { margin: 20px 0 8px; font-size: 24px; letter-spacing: -.03em; }
+    .service-card p { margin: 0; color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .tag { padding: 7px 10px; border-radius: 999px; border: 1px solid var(--line); background: #fbfdff; color: #526176; font-size: 12px; font-weight: 700; }
+
+    .approach-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 70px; align-items: start; }
+    .steps { display: grid; gap: 14px; }
+    .step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 18px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .step-no { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; color: white; background: var(--navy); font-weight: 800; }
+    .step h3 { margin: 1px 0 5px; font-size: 19px; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .industries {
+      color: white;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(23,104,229,.35), transparent 25%),
+        var(--navy);
+    }
+    .industries .section-intro { color: #adbbcc; }
+    .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 42px; }
+    .industry {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .credibility-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
+    .credibility {
+      padding: 26px;
+      border-left: 3px solid var(--brand);
+      background: var(--paper);
+      border-radius: 0 16px 16px 0;
+    }
+    .credibility h3 { margin: 0 0 8px; font-size: 19px; }
+    .credibility p { margin: 0; color: var(--muted); }
+
+    .contact-wrap {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 40px;
+      align-items: center;
+      padding: 54px;
+      border-radius: 30px;
+      color: white;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(96,165,250,.35), transparent 28%),
+        linear-gradient(135deg, #081426, #0d274d);
+      box-shadow: var(--shadow);
+    }
+    .contact-wrap h2 { margin: 0 0 14px; font-size: clamp(34px, 5vw, 56px); line-height: 1.02; letter-spacing: -.05em; }
+    .contact-wrap p { margin: 0; color: #b9c6d7; font-size: 18px; }
+    .contact-actions { display: flex; justify-content: flex-end; }
+    .contact-actions .button { background: white; color: var(--navy); }
+
+    footer { padding: 30px 0 44px; color: #6b788b; font-size: 14px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding-top: 26px; border-top: 1px solid var(--line); }
+
+    @media (max-width: 920px) {
+      .navlinks a:not(.button) { display: none; }
+      .hero { padding-top: 72px; }
+      .hero-grid, .approach-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .systems-card { min-height: auto; }
+      .industry-grid { grid-template-columns: repeat(2, 1fr); }
+      .credibility-grid { grid-template-columns: 1fr; }
+      .contact-actions { justify-content: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 24px, 1160px); }
+      nav { min-height: 68px; }
+      .brand span:last-child { font-size: 14px; }
+      .navlinks .button { min-height: 42px; padding: 0 15px; }
+      .hero { padding: 58px 0 58px; }
+      h1 { font-size: 47px; }
+      section { padding: 72px 0; }
+      .card-grid, .industry-grid { grid-template-columns: 1fr; }
+      .service-card, .systems-card { padding: 24px; }
+      .contact-wrap { padding: 34px 24px; }
+      .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="ABS Systems Engineering home">
+        <span class="mark">ABS</span>
+        <span>ABS Systems Engineering</span>
+      </a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#industries">Industries</a>
+        <a class="button primary" href="mailto:info@absystemsengineering.com">Start a conversation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Advanced engineering consultancy</div>
+          <h1>Engineering clarity for <span>complex products.</span></h1>
+          <p class="lead">We help technology companies design, validate and scale dependable embedded, hardware, semiconductor and connected systems—from architecture and prototyping to production readiness.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:info@absystemsengineering.com?subject=Engineering%20consultation">Discuss your project</a>
+            <a class="button secondary" href="#services">Explore our expertise</a>
+          </div>
+          <p class="hero-note">Based in the Netherlands · Supporting ambitious teams internationally</p>
+        </div>
+
+        <aside class="systems-card" aria-label="Core capabilities">
+          <h2>One systems-level partner</h2>
+          <p>Connecting architecture, implementation, verification and product risk.</p>
+          <div class="system-list">
+            <div class="system-item"><strong>Embedded & firmware</strong><span>Build</span></div>
+            <div class="system-item"><strong>Hardware engineering</strong><span>Integrate</span></div>
+            <div class="system-item"><strong>Verification & validation</strong><span>Prove</span></div>
+            <div class="system-item"><strong>Edge AI & connected systems</strong><span>Scale</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-label">What we do</div>
+        <h2 class="section-title">Technical depth across the full product journey.</h2>
+        <p class="section-intro">We work where disciplines meet—helping teams resolve difficult engineering questions, reduce uncertainty and move forward with confidence.</p>
+
+        <div class="card-grid">
+          <article class="service-card">
+            <div class="icon">01</div>
+            <h3>Embedded Systems</h3>
+            <p>Robust firmware and system architecture for resource-constrained, connected and real-time products.</p>
+            <div class="tags"><span class="tag">MCUs</span><span class="tag">RTOS</span><span class="tag">Drivers</span><span class="tag">Connectivity</span><span class="tag">Bring-up</span></div>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">02</div>
+            <h3>Hardware Engineering</h3>
+            <p>Architecture reviews, design support and integration expertise that improve reliability before issues become expensive.</p>
+            <div class="tags"><span class="tag">System architecture</span><span class="tag">PCB review</span><span class="tag">Power</span><span class="tag">EMC</span><span class="tag">Debug</span></div>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">03</div>
+            <h3>Verification & Validation</h3>
+            <p>Evidence-driven test strategies and automation that turn requirements into trustworthy product decisions.</p>
+            <div class="tags"><span class="tag">LabVIEW</span><span class="tag">Python</span><span class="tag">Test automation</span><span class="tag">HIL</span><span class="tag">Reliability</span></div>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">04</div>
+            <h3>AI & Connected Systems</h3>
+            <p>Practical edge intelligence, sensing and IoT engineering designed around real-world constraints.</p>
+            <div class="tags"><span class="tag">Edge AI</span><span class="tag">Signal processing</span><span class="tag">Sensor fusion</span><span class="tag">IoT</span><span class="tag">Data</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container approach-grid">
+        <div>
+          <div class="section-label">How we work</div>
+          <h2 class="section-title">Structured enough to de-risk. Agile enough to deliver.</h2>
+          <p class="section-intro">Our approach keeps engineering effort tied to the decisions that matter most: feasibility, performance, reliability, compliance and scale.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-no">1</div>
+            <div><h3>Frame the real problem</h3><p>Align requirements, constraints, risks and measurable success criteria before committing resources.</p></div>
+          </article>
+          <article class="step">
+            <div class="step-no">2</div>
+            <div><h3>Build evidence quickly</h3><p>Use focused analysis, prototypes and experiments to replace assumptions with engineering evidence.</p></div>
+          </article>
+          <article class="step">
+            <div class="step-no">3</div>
+            <div><h3>Validate systematically</h3><p>Create traceable verification, automated test coverage and clear technical decision records.</p></div>
+          </article>
+          <article class="step">
+            <div class="step-no">4</div>
+            <div><h3>Prepare for scale</h3><p>Design for reliability, manufacturability, maintainability and the realities of deployment.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries" id="industries">
+      <div class="container">
+        <div class="section-label">Where we contribute</div>
+        <h2 class="section-title">Experience shaped by demanding technology environments.</h2>
+        <p class="section-intro">Our systems mindset translates across industries where product performance, evidence and reliability cannot be left to chance.</p>
+        <div class="industry-grid">
+          <div class="industry">Semiconductors</div>
+          <div class="industry">Medical Technology</div>
+          <div class="industry">Industrial IoT</div>
+          <div class="industry">Energy Systems</div>
+          <div class="industry">Connected Devices</div>
+          <div class="industry">Edge Intelligence</div>
+          <div class="industry">Test & Measurement</div>
+          <div class="industry">Product Innovation</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-label">Why ABS Systems Engineering</div>
+        <h2 class="section-title">A partner for the problems that cross boundaries.</h2>
+        <div class="credibility-grid">
+          <article class="credibility">
+            <h3>Systems thinking</h3>
+            <p>We connect hardware, firmware, software, test and product objectives rather than optimizing one discipline in isolation.</p>
+          </article>
+          <article class="credibility">
+            <h3>Verification-first delivery</h3>
+            <p>We define how success will be demonstrated early, creating clearer decisions and fewer late-stage surprises.</p>
+          </article>
+          <article class="credibility">
+            <h3>Practical technical leadership</h3>
+            <p>We combine hands-on engineering with architecture, stakeholder alignment and disciplined documentation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <div>
+            <h2>Let’s solve the hard part.</h2>
+            <p>Tell us what you are developing, where progress is blocked, or what must be proven before the next decision.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="button" href="mailto:info@absystemsengineering.com?subject=Project%20enquiry">info@absystemsengineering.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> ABS Systems Engineering</span>
+      <span>Engineering clarity for complex products.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
