@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://absystemsengineering.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://absystemsengineering.com/careers/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://absystemsengineering.com/privacy/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://absystemsengineering.com/industries/semiconductors/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://absystemsengineering.com/industries/medical-technology/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://absystemsengineering.com/industries/industrial-iot/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://absystemsengineering.com/industries/energy-systems/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://absystemsengineering.com/industries/connected-products/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://absystemsengineering.com/industries/test-measurement/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+</urlset>
